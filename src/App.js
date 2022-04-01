@@ -6,14 +6,13 @@ import './App.css';
 import RouteLogin from "./components/routeLogin";
 function App() {
   return (
-    <>
+
     <Router>
             <Switch>
               <Route path="/login" component={Login}/>
               <RouteLogin path="/" component={Home} exact/>
             </Switch>
     </Router>
-    </>
   );
 }
 

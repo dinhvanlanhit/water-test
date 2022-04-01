@@ -18,6 +18,14 @@ button, input, optgroup, select, textarea {
   font-size: inherit;
   line-height: inherit;
 }
+.button-view-detail{
+  padding: 10px;
+}
+.button-view-detail:hover{
+    background-color: #2a1a95;
+    color: white;
+    border-radius: 10px;
+}
 button, input {
   overflow: visible;
 }
@@ -44,7 +52,18 @@ label {
   margin-left: 35px;
   font-size: 14pt;
 }
-
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
 .box-main{
   padding: 5px;
   margin-bottom: 10px;
@@ -53,12 +72,12 @@ label {
   justify-content: center;
 }
 .box-login {
-  margin-top: 10%;
+  margin-top: 5%;
   width: 350px;
   height: auto;
   border: solid 3px #3f51b5;
   border-radius: 2%;
-  background-color:#dde7ef;
+  background-color: #ffffff;
 }
 .box-login form{
   padding: 15px;
@@ -73,23 +92,7 @@ label {
   width: 180px;
   border: solid 5px #3f51b5;
 }
-.header{
-  position: fixed;
-  width: 100%;
-  background-color: #2a1a95;
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-.header-left{
-  flex: 2;
-}
-.header-center {
-  flex: 4;
-}
-.header-right {
-  flex: 2;
-}
+
 .login-logo{
   width: 85px;
   border-radius: 50%;
@@ -98,11 +101,11 @@ label {
 .header-title{
   text-align: center;
   color: white;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 .header-title a{
   color: white;
-  font-size: 14pt;
+  font-size: 12pt;
   text-decoration: none;
 }
 .header-title a:hover{
@@ -111,21 +114,29 @@ label {
 .logout-text{
   color: white;
   text-align: center;
-  font-size: 12pt;
+  font-size: 10pt;
 }
 .logout-text a{
   color: white;
 }
+.logout-text a:hover{
+  color: #35dcf1;
+}
 .logout-text img{
-  width: 25px;
-    margin-left: -31px;
+  width: 20px;
+  margin-left: -22px;
     margin-top: 0px;
     position: absolute;
 }
 .lang-text{
-  text-align: center;
+  cursor: pointer;
   color: white;
-  font-size: 12pt;
+}
+.lang-text:hover{
+  color: #35dcf1;
+}
+.lang-text.active{
+  color: #35dcf1;
 }
 .btn {
   display: inline-block;
@@ -156,22 +167,10 @@ label {
   background-color: #007bff;
   border-color: #007bff;
 }
-
-.card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+.btn-primary:hover{
+  color: #fff;
+  background-color: #b11338;
+  border-color: #007bff;
 }
 .form-group {
   margin-bottom: 1rem;
@@ -189,14 +188,11 @@ label {
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.wapper-box-main-adrress{
-  display: flex;
-  align-items: center;
-}
+
+
 .box-adrress-item{
   background-color: #99e2eb;
-  width: 300px;
-  height: 280px;
+  width: 50%;
   border-radius: 10px;
   margin: 15px;
   padding: 10px;
@@ -212,22 +208,26 @@ label {
 .progress-green, .progress-hover-green:hover {
   color: #fff!important;
   background-color: #4CAF50!important;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .progress-red, .progress-hover-red:hover {
   color: #fff!important;
   background-color: #f44336!important;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .progress-blue, .progress-hover-blue:hover {
   color: #fff!important;
   background-color: #2196F3!important;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .progress-light-grey, .progress-hover-light-grey:hover, .progress-light-gray, .progress-hover-light-gray:hover {
   color: #000!important;
   background-color: #ffffff!important;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
 .main-detail{
@@ -235,20 +235,38 @@ label {
   font-weight: bold;
   cursor: pointer;
 }
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: #2a1a95;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 100000;
+}
+.header-left{
+  flex: 2;
+}
+.header-center {
+  flex: 4;
+}
+.header-right {
+  flex: 2;
+}
 .sidebar {
   top: 80px;
-  margin: 5px;
-  padding: 5px;
-  width: 300px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  border: solid 3px #676778;
-  border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+    background-color: #ffffff;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    border: solid 3px #dcdcea;
+    border-radius: 3px;
 }
 
-.sidebar a {
+.scrollmenu a {
   display: block;
   color: black;
   padding: 16px;
@@ -257,27 +275,113 @@ label {
   margin: 5px;
   border-radius: 10px;
   background-color: #99e2eb;
+  cursor: pointer;
 }
  
-.sidebar a.active {
+.scrollmenu a.active {
   background-color: #134765;
   color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.scrollmenu a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
-
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+}
 .content {
   top: 80px;
   margin-left: 300px;
   padding: 1px 16px;
-  height: 1000px;
+  height: auto;
+}
+.container{
+  margin-top: 100px;
+}
+.row {margin: 0 -5px;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin: 15px;
+  background-color: #8ff2ff;
+  border-radius: 10px;
+}
+.float-left{
+  float: right;
+}
+.float-right{
+  float: right;
+}
+.prev{
+  width: 30px;
+  cursor: pointer;
+}
+.table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.chlorine {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
+.chlorine td, .chlorine th {
+  border: 2px solid #f4e5e5;
+  padding: 8px;
+  background-color: #35dcf1;
+}
+
+.chlorine tr:nth-child(even){background-color: #f2f2f2;}
+
+.chlorine tr:hover {background-color: #ddd;}
+
+.chlorine th {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  background-color: #2a1a95;
+  color: white;
+
+}
+@media screen and (max-width: 1280px){
+  .column {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1000px){
+  .column {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
 @media screen and (max-width: 700px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
   .sidebar {
+    top: 80px;;
     width: 100%;
     height: auto;
     position: relative;
@@ -285,21 +389,80 @@ label {
     padding: unset;
     border: unset;
     border-radius:unset;
+    overflow: auto;
+    white-space: nowrap;
+    position: fixed;
+    z-index: 100000;
   }
-  .sidebar a {
-    float: left;
+  .scrollmenu a {
     border: unset;
     margin: unset;
     border-radius:unset;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    cursor: pointer;
+    margin: 1px;
+  }
+  div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
   }
   .content {
     margin-left: 0;
   }
+  .container{
+    margin-top: 160px;
+  }
 }
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
+@media only screen and (max-width: 480px) and (min-width: 320px) and (min-width: 600px){
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .header-title a {
+    font-size: 10pt;
+}
+  .sidebar {
+    top:unset;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin:  unset;
+    padding: unset;
+    border: unset;
+    border-radius:unset;
+    overflow: auto;
+    white-space: nowrap;
+    position: fixed;
+    z-index: 100000;
+  }
+  .scrollmenu a {
+    border: unset;
+    margin: unset;
+    border-radius:unset;
+    display: inline-block;
+    color: black;
     text-align: center;
-    float: none;
+    padding: 14px;
+    cursor: pointer;
+    margin: 1px;
+  }
+  div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .content {
+    margin-left: 0;
+  }
+  .header-right {
+    flex: unset;
+  } 
+  .container{
+    margin-top: 160px;
   }
 }
