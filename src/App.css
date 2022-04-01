@@ -1,38 +1,305 @@
-.App {
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+form {
+  display: block;
+  margin-top: 0em;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button, input {
+  overflow: visible;
+}
+label {
+  display: inline-block;
+}
+.text-center{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,::after, ::before {
+  box-sizing: border-box;
+}
+.address-text{
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 0px;
+}
+.address-text img{
+  width: 40px;
+  margin-top: -5px;
+  position: absolute;
+}
+.address-text span{
+  margin-left: 35px;
+  font-size: 14pt;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box-main{
+  padding: 5px;
+  margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.box-login {
+  margin-top: 10%;
+  width: 350px;
+  height: auto;
+  border: solid 3px #3f51b5;
+  border-radius: 2%;
+  background-color:#dde7ef;
+}
+.box-login form{
+  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.box-login-logo{
+  text-align: center;
+}
+.box-login-logo img{
+  border-radius: 50%;
+  width: 180px;
+  border: solid 5px #3f51b5;
+}
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: #2a1a95;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.header-left{
+  flex: 2;
+}
+.header-center {
+  flex: 4;
+}
+.header-right {
+  flex: 2;
+}
+.login-logo{
+  width: 85px;
+  border-radius: 50%;
+  padding: 10px;
+}
+.header-title{
+  text-align: center;
+  color: white;
+  font-size: 14pt;
+}
+.header-title a{
+  color: white;
+  font-size: 14pt;
+  text-decoration: none;
+}
+.header-title a:hover{
+  color: rgb(28, 230, 226);
+}
+.logout-text{
+  color: white;
+  text-align: center;
+  font-size: 12pt;
+}
+.logout-text a{
+  color: white;
+}
+.logout-text img{
+  width: 25px;
+    margin-left: -31px;
+    margin-top: 0px;
+    position: absolute;
+}
+.lang-text{
+  text-align: center;
+  color: white;
+  font-size: 12pt;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.wapper-box-main-adrress{
+  display: flex;
+  align-items: center;
+}
+.box-adrress-item{
+  background-color: #99e2eb;
+  width: 300px;
+  height: 280px;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+}
+.box-adrress-item .title{
+    color: black;
+    text-align: center;
+}
+
+.progress-center {
+  text-align: center!important;
+}
+.progress-green, .progress-hover-green:hover {
+  color: #fff!important;
+  background-color: #4CAF50!important;
+  border-radius: 10px;
+}
+.progress-red, .progress-hover-red:hover {
+  color: #fff!important;
+  background-color: #f44336!important;
+  border-radius: 10px;
+}
+.progress-blue, .progress-hover-blue:hover {
+  color: #fff!important;
+  background-color: #2196F3!important;
+  border-radius: 10px;
+}
+.progress-light-grey, .progress-hover-light-grey:hover, .progress-light-gray, .progress-hover-light-gray:hover {
+  color: #000!important;
+  background-color: #ffffff!important;
+  border-radius: 10px;
+
+}
+.main-detail{
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.sidebar {
+  top: 80px;
+  margin: 5px;
+  padding: 5px;
+  width: 300px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  border: solid 3px #676778;
+  border-radius: 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  border: solid 1px #342b2b;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #99e2eb;
+}
+ 
+.sidebar a.active {
+  background-color: #134765;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.content {
+  top: 80px;
+  margin-left: 300px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin:  unset;
+    padding: unset;
+    border: unset;
+    border-radius:unset;
   }
-  to {
-    transform: rotate(360deg);
+  .sidebar a {
+    float: left;
+    border: unset;
+    margin: unset;
+    border-radius:unset;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
 }
