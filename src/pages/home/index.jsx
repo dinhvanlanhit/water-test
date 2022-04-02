@@ -18,6 +18,7 @@ function Home() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [viewItemDetail, setViewItemDetail] = useState(null);
   const [listData, setListData] = useState([]);
+  const [isLoading,setLoading]= useState(true);
   const handleChangeLang=(flag)=>{
     setLangFlag(flag);
     setLang(flag=='en'?en:vi);
@@ -30,15 +31,21 @@ function Home() {
       setViewItemDetail(result[0]);
       setActiveMenu(result[0].stationID);
       setStatusViewDetailChlorine(false);
+      setLoading(false);
     } else {
       setListData([]);
       setStatusViewDetailChlorine(false);
+      setLoading(false);
     }
   }
   const handleViewItemDetail = (payload) => {
-    setStatusViewDetailChlorine(false);
-    setActiveMenu(payload.stationID)
-    setViewItemDetail(payload);
+    setLoading(true);
+    setTimeout(()=>{
+      setStatusViewDetailChlorine(false);
+      setActiveMenu(payload.stationID)
+      setViewItemDetail(payload);
+      setLoading(false);
+    },200)
   }
   const handleViewDetailChlorine = (payload) => {
     setDetailChlorine(payload);
@@ -118,12 +125,16 @@ function Home() {
     )
   }
   const handleLogin = ()=>{ localStorage.clear();}
+  const loaDing =()=>{
+     return(<div class="__loader __loader-default is-active" data-text="" ></div>);
+  }
   useEffect(() => {
     getListData();
     setLang(langFlag=='en'?en:vi);
   }, []);
   return (
     <>
+      {isLoading?loaDing():<></>}
       <div className="header">
             <div className="header-left">
                     <img className="login-logo" src="./images/logo_sistech.jpg" alt="Sistech logo"/>
