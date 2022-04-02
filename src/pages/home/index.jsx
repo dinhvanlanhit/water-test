@@ -19,11 +19,13 @@ function Home() {
   const [viewItemDetail, setViewItemDetail] = useState(null);
   const [listData, setListData] = useState([]);
   const [isLoading,setLoading]= useState(true);
+  // Hàm chọn ngôn ngữ 
   const handleChangeLang=(flag)=>{
     setLangFlag(flag);
     setLang(flag=='en'?en:vi);
     localStorage.setItem("langFlag",flag);
   }
+  /// Hàm gọi Api tu serve //////
   const getListData = async () => {
     const result = await axiosClient.get("/stations/list?fbclid=IwAR1ohNwD8c6PsB-FII0iTWDOVSk1rVMSl0Smrh-Wtg3N06dZyQ6skx-RLM4");
     if (result.length > 0) {
@@ -38,6 +40,7 @@ function Home() {
       setLoading(false);
     }
   }
+  /// Hàm xem thông tin chi tiết
   const handleViewItemDetail = (payload) => {
     setLoading(true);
     setTimeout(()=>{
